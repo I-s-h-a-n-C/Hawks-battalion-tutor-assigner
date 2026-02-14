@@ -1,0 +1,50 @@
+/* Tutor Signup Page Styles */
+
+.tutor-signup-section {
+    background-color: #e8f5e9;
+    border-color: #2e7d32;
+}
+
+.tutor-signup-section h2 {
+    color: #1b5e20;
+}
+
+.tutor-form {
+    max-width: 800px;
+    margin: 2rem auto;
+}
+
+.tutor-form input,
+.tutor-form select,
+.tutor-form textarea {
+    border-color: #2e7d32;
+}
+
+.tutor-form input:focus,
+.tutor-form select:focus,
+.tutor-form textarea:focus {
+    border-color: #1b5e20;
+}
+
+.tutor-form button[type="submit"] {
+    background-color: #2e7d32;
+    border-color: #2e7d32;
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+
+.tutor-form button[type="submit"]:hover {
+    background-color: white;
+    color: #2e7d32;
+}
+
+.tutor-form select[multiple] {
+    min-height: 150px;
+    padding: 10px;
+}
+
+#tutor-subjects {
+    border-width: 2px;
+}

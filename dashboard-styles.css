@@ -1,0 +1,73 @@
+/* Dashboard Page Styles */
+
+.dashboard-header {
+    background-color: #f3e5f5;
+    border-color: #7b1fa2;
+}
+
+.dashboard-header h2 {
+    color: #6a1b9a;
+}
+
+#welcome-message {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.user-role {
+    margin-top: 1rem;
+    padding: 10px;
+    background-color: white;
+    border: 2px solid #7b1fa2;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.dashboard-controls {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: #fafafa;
+    border: 1px solid #ddd;
+}
+
+.dashboard-controls label {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.dashboard-controls select {
+    width: auto;
+    display: inline-block;
+    padding: 8px;
+    border: 2px solid #7b1fa2;
+}
+
+.tutor-dashboard,
+.admin-dashboard {
+    background-color: white;
+    border-color: #ddd;
+}
+
+.dashboard-table th {
+    background-color: #7b1fa2;
+    color: white;
+}
+
+.dashboard-table button {
+    padding: 8px 16px;
+    margin: 2px;
+    font-size: 0.9rem;
+    background-color: #7b1fa2;
+    border-color: #7b1fa2;
+}
+
+.dashboard-table button:hover {
+    background-color: white;
+    color: #7b1fa2;
+}
+
+.placeholder-row td {
+    text-align: center;
+    padding: 2rem;
+    color: #999;
+}

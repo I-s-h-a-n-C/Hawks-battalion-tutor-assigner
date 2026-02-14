@@ -1,0 +1,49 @@
+/* Login Page Styles */
+
+.login-section {
+    background-color: #e3f2fd;
+    border-color: #1976d2;
+    text-align: center;
+}
+
+.login-section h2 {
+    color: #1565c0;
+}
+
+.login-container {
+    margin: 2rem auto;
+    max-width: 400px;
+}
+
+.google-login-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #1976d2;
+    border-color: #1976d2;
+    font-size: 1.1rem;
+}
+
+.google-login-btn:hover {
+    background-color: white;
+    color: #1976d2;
+}
+
+.auth-note {
+    margin-top: 1rem;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.info-section {
+    background-color: white;
+    border-color: #ddd;
+}
+
+.info-section ul {
+    margin-left: 2rem;
+    margin-top: 1rem;
+}
+
+.info-section li {
+    margin-bottom: 0.5rem;
+}
