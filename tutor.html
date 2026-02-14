@@ -29,6 +29,12 @@
             <h2>Tutor Signup</h2>
             <p>Sign up to become a tutor and help your fellow cadets</p>
 
+            <!-- Staff Only Notice -->
+            <div class="staff-only-notice">
+                <strong>⚠️ STAFF MEMBERS ONLY</strong>
+                <p>Only authorized staff members may register as tutors. You must provide valid staff credentials to complete registration.</p>
+            </div>
+
             <!-- Success/Error Message Placeholder -->
             <div id="message-container" class="message-container">
                 <!-- Success or error messages will be displayed here dynamically -->
@@ -59,6 +65,20 @@
                         placeholder="your.email@example.com"
                     >
                     <!-- Email will be auto-populated from Firebase Auth if logged in -->
+                </div>
+
+                <!-- Staff ID Field -->
+                <div class="form-group staff-field">
+                    <label for="staff-id">Staff ID Number *</label>
+                    <input 
+                        type="text" 
+                        id="staff-id" 
+                        name="staffId" 
+                        required 
+                        placeholder="Enter your staff ID"
+                        pattern="[0-9]+"
+                    >
+                    <small>Your unique staff identification number is required for verification</small>
                 </div>
 
                 <!-- Grade Field -->
@@ -112,6 +132,19 @@
                         rows="4" 
                         placeholder="Describe specific days/times you're available for tutoring (e.g., Monday and Wednesday during A enrichment)"
                     ></textarea>
+                </div>
+
+                <!-- Staff Confirmation -->
+                <div class="form-group checkbox-group staff-field">
+                    <label for="staff-confirmation">
+                        <input 
+                            type="checkbox" 
+                            id="staff-confirmation" 
+                            name="staffConfirmation" 
+                            required
+                        >
+                        I confirm that I am an authorized staff member and have permission to tutor students *
+                    </label>
                 </div>
 
                 <!-- Active Toggle -->

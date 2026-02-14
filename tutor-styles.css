@@ -9,6 +9,46 @@
     color: #1b5e20;
 }
 
+/* Staff Only Notice */
+.staff-only-notice {
+    background-color: #fff9c4;
+    border: 3px solid #f57f17;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+.staff-only-notice strong {
+    display: block;
+    font-size: 1.3rem;
+    color: #f57f17;
+    margin-bottom: 0.5rem;
+}
+
+.staff-only-notice p {
+    color: #333;
+    margin: 0;
+}
+
+/* Staff-specific form fields */
+.staff-field {
+    background-color: #fffde7;
+    padding: 1rem;
+    border: 2px solid #fbc02d;
+}
+
+.staff-field label {
+    color: #f57f17;
+}
+
+.staff-field input {
+    border-color: #fbc02d;
+}
+
+.staff-field input:focus {
+    border-color: #f57f17;
+}
+
 .tutor-form {
     max-width: 800px;
     margin: 2rem auto;
