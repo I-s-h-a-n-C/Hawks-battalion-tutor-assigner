@@ -32,7 +32,7 @@
             <!-- Staff Only Notice -->
             <div class="staff-only-notice">
                 <strong>⚠️ STAFF MEMBERS ONLY</strong>
-                <p>Only authorized staff members may register as tutors. You must provide valid staff credentials to complete registration.</p>
+                <p>Only authorized staff members may register as tutors. You must enter the staff verification code to complete registration.</p>
             </div>
 
             <!-- Success/Error Message Placeholder -->
@@ -67,18 +67,17 @@
                     <!-- Email will be auto-populated from Firebase Auth if logged in -->
                 </div>
 
-                <!-- Staff ID Field -->
+                <!-- Staff Code Field -->
                 <div class="form-group staff-field">
-                    <label for="staff-id">Staff ID Number *</label>
+                    <label for="staff-code">Staff Verification Code *</label>
                     <input 
-                        type="text" 
-                        id="staff-id" 
-                        name="staffId" 
+                        type="password" 
+                        id="staff-code" 
+                        name="staffCode" 
                         required 
-                        placeholder="Enter your staff ID"
-                        pattern="[0-9]+"
+                        placeholder="Enter the staff verification code"
                     >
-                    <small>Your unique staff identification number is required for verification</small>
+                    <small>Contact your supervisor if you don't have the staff verification code</small>
                 </div>
 
                 <!-- Grade Field -->
