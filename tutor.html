@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JROTC Tutor Assigner - Tutor Signup</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Firebase SDK will be added here -->
+    <!-- Firestore configuration will be added here -->
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <h1>JROTC Tutor Assigner</h1>
+            <ul class="nav-links">
+                <li><a href="index.html">Login</a></li>
+                <li><a href="tutor.html">Become a Tutor</a></li>
+                <li><a href="request.html">Request Tutoring</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <section class="tutor-signup-section">
+            <h2>Tutor Signup</h2>
+            <p>Sign up to become a tutor and help your fellow cadets</p>
+
+            <!-- Success/Error Message Placeholder -->
+            <div id="message-container" class="message-container">
+                <!-- Success or error messages will be displayed here dynamically -->
+            </div>
+
+            <!-- Tutor Signup Form -->
+            <form id="tutor-signup-form" class="tutor-form">
+                <!-- Name Field -->
+                <div class="form-group">
+                    <label for="tutor-name">Full Name *</label>
+                    <input 
+                        type="text" 
+                        id="tutor-name" 
+                        name="tutorName" 
+                        required 
+                        placeholder="Enter your full name"
+                    >
+                </div>
+
+                <!-- Email Field -->
+                <div class="form-group">
+                    <label for="tutor-email">Email Address *</label>
+                    <input 
+                        type="email" 
+                        id="tutor-email" 
+                        name="tutorEmail" 
+                        required 
+                        placeholder="your.email@example.com"
+                    >
+                    <!-- Email will be auto-populated from Firebase Auth if logged in -->
+                </div>
+
+                <!-- Grade Field -->
+                <div class="form-group">
+                    <label for="tutor-grade">Grade *</label>
+                    <select id="tutor-grade" name="tutorGrade" required>
+                        <option value="" disabled selected>Select your grade</option>
+                        <option value="9">9th Grade</option>
+                        <option value="10">10th Grade</option>
+                        <option value="11">11th Grade</option>
+                        <option value="12">12th Grade</option>
+                    </select>
+                </div>
+
+                <!-- Subjects Field (Multi-Select) -->
+                <div class="form-group">
+                    <label for="tutor-subjects">Subjects You Can Tutor *</label>
+                    <select id="tutor-subjects" name="tutorSubjects" multiple required size="8">
+                        <option value="math">Mathematics</option>
+                        <option value="english">English/Language Arts</option>
+                        <option value="science">Science (General)</option>
+                        <option value="biology">Biology</option>
+                        <option value="chemistry">Chemistry</option>
+                        <option value="physics">Physics</option>
+                        <option value="history">History/Social Studies</option>
+                        <option value="spanish">Spanish</option>
+                        <option value="french">French</option>
+                        <option value="computer">Computer Science</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <small>Hold Ctrl (or Cmd) to select multiple subjects</small>
+                </div>
+
+                <!-- Enrichment Field (A or D) -->
+                <div class="form-group">
+                    <label for="tutor-enrichment">Enrichment Period *</label>
+                    <select id="tutor-enrichment" name="tutorEnrichment" required>
+                        <option value="" disabled selected>Select enrichment period</option>
+                        <option value="A">A Enrichment</option>
+                        <option value="D">D Enrichment</option>
+                        <option value="both">Both A and D</option>
+                    </select>
+                </div>
+
+                <!-- Availability Field -->
+                <div class="form-group">
+                    <label for="tutor-availability">Availability Details</label>
+                    <textarea 
+                        id="tutor-availability" 
+                        name="tutorAvailability" 
+                        rows="4" 
+                        placeholder="Describe specific days/times you're available for tutoring (e.g., Monday and Wednesday during A enrichment)"
+                    ></textarea>
+                </div>
+
+                <!-- Active Toggle -->
+                <div class="form-group checkbox-group">
+                    <label for="tutor-active">
+                        <input 
+                            type="checkbox" 
+                            id="tutor-active" 
+                            name="tutorActive" 
+                            checked
+                        >
+                        I am currently active and available for tutoring
+                    </label>
+                    <small>Uncheck this if you need to pause tutoring assignments</small>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">Sign Up as Tutor</button>
+                    <button type="reset" class="btn-secondary">Clear Form</button>
+                </div>
+            </form>
+
+            <!-- JavaScript form submission logic will be added here -->
+            <!-- Firestore write operation will be implemented to save tutor data -->
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 JROTC Tutor Assigner. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript files will be linked here -->
+    <!-- <script src="app.js"></script> -->
+    <!-- Form validation and submission handler will be added here -->
+    <!-- Firestore save logic will be implemented here -->
+</body>
+</html>

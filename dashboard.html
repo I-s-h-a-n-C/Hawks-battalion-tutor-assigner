@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JROTC Tutor Assigner - Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Firebase SDK will be added here -->
+    <!-- Firestore configuration will be added here -->
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <h1>JROTC Tutor Assigner</h1>
+            <ul class="nav-links">
+                <li><a href="index.html">Login</a></li>
+                <li><a href="tutor.html">Become a Tutor</a></li>
+                <li><a href="request.html">Request Tutoring</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+            </ul>
+            <!-- User profile/logout section -->
+            <div id="user-info" class="user-info">
+                <!-- Logged-in user name and logout button will appear here -->
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Success/Error Message Placeholder -->
+        <div id="message-container" class="message-container">
+            <!-- Success or error messages will be displayed here dynamically -->
+        </div>
+
+        <!-- Dashboard Header -->
+        <section class="dashboard-header">
+            <h2>Dashboard</h2>
+            <p id="welcome-message">Welcome back!</p>
+            <!-- User role (tutor/admin/student) will be displayed here -->
+            <div id="user-role" class="user-role">
+                <!-- JavaScript will determine and display user role -->
+            </div>
+        </section>
+
+        <!-- Tutor Dashboard Section -->
+        <section id="tutor-dashboard" class="tutor-dashboard">
+            <h3>Your Assigned Tutoring Sessions</h3>
+            
+            <!-- Filter/Sort Options -->
+            <div class="dashboard-controls">
+                <label for="filter-status">Filter by Status:</label>
+                <select id="filter-status" name="filterStatus">
+                    <option value="all">All</option>
+                    <option value="pending">Pending</option>
+                    <option value="accepted">Accepted</option>
+                    <option value="in-progress">In Progress</option>
+                    <option value="completed">Completed</option>
+                </select>
+                <!-- JavaScript will filter displayed requests based on selection -->
+            </div>
+
+            <!-- Assigned Requests Table -->
+            <div class="table-container">
+                <table id="assigned-requests-table" class="dashboard-table">
+                    <thead>
+                        <tr>
+                            <th>Request ID</th>
+                            <th>Student Name</th>
+                            <th>Student Email</th>
+                            <th>Subject</th>
+                            <th>Topic</th>
+                            <th>Status</th>
+                            <th>Date Requested</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="requests-tbody">
+                        <!-- Firestore query will populate rows here -->
+                        <!-- Example placeholder row: -->
+                        <tr class="placeholder-row">
+                            <td colspan="8" class="no-data">
+                                No assigned tutoring sessions yet. Check back later!
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Action buttons for each request will include: -->
+            <!-- - Accept Request button -->
+            <!-- - Start Session button -->
+            <!-- - Mark Complete button -->
+            <!-- - Cancel/Decline button -->
+        </section>
+
+        <!-- Admin Dashboard Section -->
+        <section id="admin-dashboard" class="admin-dashboard">
+            <h3>Admin Panel</h3>
+            
+            <!-- Statistics Overview -->
+            <div class="stats-container">
+                <div class="stat-card">
+                    <h4>Total Tutors</h4>
+                    <p id="total-tutors" class="stat-number">0</p>
+                </div>
+                <div class="stat-card">
+                    <h4>Active Requests</h4>
+                    <p id="active-requests" class="stat-number">0</p>
+                </div>
+                <div class="stat-card">
+                    <h4>Completed Sessions</h4>
+                    <p id="completed-sessions" class="stat-number">0</p>
+                </div>
+                <div class="stat-card">
+                    <h4>Pending Matches</h4>
+                    <p id="pending-matches" class="stat-number">0</p>
+                </div>
+            </div>
+            <!-- Firestore queries will populate these statistics -->
+
+            <!-- All Requests Management -->
+            <h4>Manage All Requests</h4>
+            <div class="table-container">
+                <table id="all-requests-table" class="dashboard-table">
+                    <thead>
+                        <tr>
+                            <th>Request ID</th>
+                            <th>Student Name</th>
+                            <th>Subject</th>
+                            <th>Assigned Tutor</th>
+                            <th>Status</th>
+                            <th>Date Created</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="all-requests-tbody">
+                        <!-- Firestore query will populate all requests here -->
+                        <tr class="placeholder-row">
+                            <td colspan="7" class="no-data">
+                                Loading requests...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- All Tutors Management -->
+            <h4>Manage Tutors</h4>
+            <div class="table-container">
+                <table id="tutors-table" class="dashboard-table">
+                    <thead>
+                        <tr>
+                            <th>Tutor Name</th>
+                            <th>Email</th>
+                            <th>Grade</th>
+                            <th>Subjects</th>
+                            <th>Enrichment</th>
+                            <th>Active</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tutors-tbody">
+                        <!-- Firestore query will populate tutor list here -->
+                        <tr class="placeholder-row">
+                            <td colspan="7" class="no-data">
+                                Loading tutors...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Admin actions will include: -->
+            <!-- - Manually assign/reassign tutors -->
+            <!-- - Deactivate/activate tutors -->
+            <!-- - View detailed tutor profiles -->
+        </section>
+
+        <!-- Student Dashboard Section -->
+        <section id="student-dashboard" class="student-dashboard">
+            <h3>Your Tutoring Requests</h3>
+            
+            <div class="table-container">
+                <table id="student-requests-table" class="dashboard-table">
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Topic</th>
+                            <th>Assigned Tutor</th>
+                            <th>Tutor Email</th>
+                            <th>Status</th>
+                            <th>Date Requested</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="student-requests-tbody">
+                        <!-- Firestore query will populate student's requests here -->
+                        <tr class="placeholder-row">
+                            <td colspan="7" class="no-data">
+                                You haven't submitted any tutoring requests yet.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Student actions will include: -->
+            <!-- - Cancel pending request -->
+            <!-- - Contact tutor -->
+            <!-- - Mark session as completed -->
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 JROTC Tutor Assigner. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript files will be linked here -->
+    <!-- <script src="app.js"></script> -->
+    <!-- Dashboard initialization logic will be added here -->
+    <!-- Firestore real-time listeners will be implemented here -->
+    <!-- Role-based display logic (show/hide sections based on user role) -->
+    <!-- Button click handlers for actions (accept, complete, cancel, etc.) -->
+    <!-- Firestore update operations for status changes -->
+</body>
+</html>

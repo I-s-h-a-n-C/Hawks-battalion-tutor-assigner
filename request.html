@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JROTC Tutor Assigner - Request Tutoring</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Firebase SDK will be added here -->
+    <!-- Firestore configuration will be added here -->
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <h1>JROTC Tutor Assigner</h1>
+            <ul class="nav-links">
+                <li><a href="index.html">Login</a></li>
+                <li><a href="tutor.html">Become a Tutor</a></li>
+                <li><a href="request.html">Request Tutoring</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <section class="request-section">
+            <h2>Request Tutoring</h2>
+            <p>Submit a tutoring request and we'll match you with an available tutor</p>
+
+            <!-- Success/Error Message Placeholder -->
+            <div id="message-container" class="message-container">
+                <!-- Success or error messages will be displayed here dynamically -->
+            </div>
+
+            <!-- Tutoring Request Form -->
+            <form id="tutoring-request-form" class="request-form">
+                <!-- Name Field -->
+                <div class="form-group">
+                    <label for="student-name">Your Full Name *</label>
+                    <input 
+                        type="text" 
+                        id="student-name" 
+                        name="studentName" 
+                        required 
+                        placeholder="Enter your full name"
+                    >
+                </div>
+
+                <!-- Email Field -->
+                <div class="form-group">
+                    <label for="student-email">Your Email Address *</label>
+                    <input 
+                        type="email" 
+                        id="student-email" 
+                        name="studentEmail" 
+                        required 
+                        placeholder="your.email@example.com"
+                    >
+                    <!-- Email will be auto-populated from Firebase Auth if logged in -->
+                </div>
+
+                <!-- Subject Field -->
+                <div class="form-group">
+                    <label for="request-subject">Subject *</label>
+                    <select id="request-subject" name="requestSubject" required>
+                        <option value="" disabled selected>Select the subject you need help with</option>
+                        <option value="math">Mathematics</option>
+                        <option value="english">English/Language Arts</option>
+                        <option value="science">Science (General)</option>
+                        <option value="biology">Biology</option>
+                        <option value="chemistry">Chemistry</option>
+                        <option value="physics">Physics</option>
+                        <option value="history">History/Social Studies</option>
+                        <option value="spanish">Spanish</option>
+                        <option value="french">French</option>
+                        <option value="computer">Computer Science</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <!-- Specific Topic Field -->
+                <div class="form-group">
+                    <label for="specific-topic">Specific Topic or Area *</label>
+                    <textarea 
+                        id="specific-topic" 
+                        name="specificTopic" 
+                        rows="5" 
+                        required 
+                        placeholder="Describe what specific topic or problem you need help with (e.g., quadratic equations, essay writing, balancing chemical equations)"
+                    ></textarea>
+                </div>
+
+                <!-- Grade Level (Optional) -->
+                <div class="form-group">
+                    <label for="student-grade">Your Grade (Optional)</label>
+                    <select id="student-grade" name="studentGrade">
+                        <option value="" selected>Select your grade</option>
+                        <option value="9">9th Grade</option>
+                        <option value="10">10th Grade</option>
+                        <option value="11">11th Grade</option>
+                        <option value="12">12th Grade</option>
+                    </select>
+                </div>
+
+                <!-- Preferred Enrichment Period (Optional) -->
+                <div class="form-group">
+                    <label for="preferred-enrichment">Preferred Enrichment Period (Optional)</label>
+                    <select id="preferred-enrichment" name="preferredEnrichment">
+                        <option value="" selected>No preference</option>
+                        <option value="A">A Enrichment</option>
+                        <option value="D">D Enrichment</option>
+                    </select>
+                </div>
+
+                <!-- Urgency Level (Optional) -->
+                <div class="form-group">
+                    <label for="urgency">Urgency</label>
+                    <select id="urgency" name="urgency">
+                        <option value="normal" selected>Normal</option>
+                        <option value="soon">Needed Soon (within 2-3 days)</option>
+                        <option value="urgent">Urgent (test/assignment due tomorrow)</option>
+                    </select>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">Submit Request</button>
+                    <button type="reset" class="btn-secondary">Clear Form</button>
+                </div>
+            </form>
+
+            <!-- JavaScript form submission logic will be added here -->
+            <!-- Firestore write operation will be implemented to save tutoring request -->
+            <!-- Matching algorithm will be triggered here to assign an available tutor -->
+        </section>
+
+        <!-- Request Status Section -->
+        <section class="status-section">
+            <h3>Your Pending Requests</h3>
+            <div id="pending-requests-container">
+                <!-- User's pending tutoring requests will be displayed here -->
+                <!-- Firestore query will fetch requests based on logged-in user -->
+                <p class="placeholder-text">Your pending requests will appear here once you submit a request.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 JROTC Tutor Assigner. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript files will be linked here -->
+    <!-- <script src="app.js"></script> -->
+    <!-- Form validation and submission handler will be added here -->
+    <!-- Firestore save and query logic will be implemented here -->
+</body>
+</html>
